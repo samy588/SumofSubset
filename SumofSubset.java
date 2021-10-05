@@ -2,8 +2,7 @@
 // problem
 class GFG {
 
-	// Returns true if there is a subset
-	// of set[] with sum equal to given sum
+	
 	static boolean isSubsetSum(int set[],
 							int n, int sum)
 	{
@@ -16,14 +15,11 @@ class GFG {
 		// If last element is greater than
 		// sum, then ignore it
 		if (set[n - 1] > sum)
-			return isSubsetSum(set, n - 1, sum);
+			return isSubsetSum(set, n , sum-1);
 
-		/* else, check if sum can be obtained
-		by any of the following
-			(a) including the last element
-			(b) excluding the last element */
+		//The return statement got errors
 		return isSubsetSum(set, n - 1, sum)
-			|| isSubsetSum(set, n - 1, sum - set[n - 1]);
+			|| isSubsetSum(set, n - 1, sum - set[n]);
 	}
 
 	/* Driver code */
